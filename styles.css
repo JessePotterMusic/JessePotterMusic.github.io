@@ -1091,6 +1091,16 @@ button {
     padding: 0px;
   }
 
+  .contact-page .content-scroll {
+    position: static;
+    inset: auto;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: visible;
+    justify-items: stretch;
+  }
+
   .content-page .page-background, .content-page .page-shade {
     position: absolute;
     height: 52svh;
