@@ -983,6 +983,47 @@ button {
   color: rgba(244, 239, 229, 0.72);
 }
 
+/* Stack the contact layout before it becomes cramped on narrower laptops/tablets. */
+@media (max-width: 1280px) {
+  .contact-page {
+    min-height: 100svh;
+    padding: 52svh 0 0;
+    overflow: visible;
+  }
+
+  .contact-page .content-scroll {
+    position: static;
+    display: block;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .contact-page .page-background,
+  .contact-page .page-shade {
+    position: absolute;
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: 52svh;
+  }
+
+  .contact-page .page-background {
+    object-position: 34% center;
+  }
+
+  .contact-page .page-shade {
+    background: linear-gradient(0deg, rgba(25, 33, 29, 0.82), transparent 52%);
+  }
+
+  .contact-card {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 3rem var(--gutter) 4rem;
+    background: var(--ink);
+    backdrop-filter: none;
+  }
+}
+
 @media (max-width: 760px) {
   .mailing-prompt {
     right: var(--gutter);
