@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The story of Nova Scotia singer-songwriter and guitarist Jesse Potter." />
+    <meta name="theme-color" content="#17251f" />
+    <meta property="og:title" content="Biography — Jesse Potter" />
+    <meta property="og:description" content="The story of Nova Scotia singer-songwriter and guitarist Jesse Potter." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://www.jessepotter.ca/biography.html" />
+    <meta property="og:image" content="https://www.jessepotter.ca/assets/jesse-potter-biography.jpg" />
+    <title>Biography — Jesse Potter</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Musical Roots timeline: scoped so it will not disturb the rest of the site */
+      .career-timeline {
+        --tl-bg: #ebe4d8;
+        --tl-bg-2: #ded3c2;
+        --tl-paper: rgba(248, 244, 236, 0.92);
+        --tl-ink: #33281f;
+        --tl-muted: #6f5f50;
+        --tl-root: #4b392d;
+        --tl-root-hi: #8d6f53;
+        --tl-ochre: #9a7849;
+        --tl-moss: #697152;
+        --tl-border: rgba(75, 57, 45, 0.16);
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-top: clamp(3.5rem, 7vw, 7rem);
+        padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(3rem, 5vw, 5rem);
+        overflow: hidden;
+        color: var(--tl-ink);
+        background:
+          radial-gradient(circle at 14% 18%, rgba(154,120,73,.10), transparent 28%),
+          radial-gradient(circle at 84% 16%, rgba(105,113,82,.12), transparent 30%),
+          linear-gradient(180deg, #f1ece3 0%, var(--tl-bg) 58%, var(--tl-bg-2) 100%);
+        border-top: 1px solid var(--tl-border);
+        border-bottom: 1px solid var(--tl-border);
+      }
+
+      .career-timeline__intro {
+        width: min(900px, calc(100% - 40px));
+        margin: 0 auto 2.25rem;
+        text-align: center;
+      }
+
+      .career-timeline__kicker {
+        margin: 0 0 .6rem;
+        color: var(--tl-ochre);
+        font-size: .76rem;
+        font-weight: 700;
+        letter-spacing: .17em;
+        text-transform: uppercase;
+      }
+
+      .career-timeline__intro h2 {
+        margin: 0;
+        color: var(--tl-ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.5rem, 5vw, 4.7rem);
+        font-weight: 400;
+        line-height: .98;
+      }
+
+      .career-timeline__intro > p:last-of-type {
+        max-width: 690px;
+        margin: 1rem auto 0;
+        color: var(--tl-muted);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(.98rem, 1.4vw, 1.08rem);
+        line-height: 1.7;
+      }
+
+      .career-timeline__hint {
+        margin-top: 1.1rem;
+        color: var(--tl-muted);
+        font-size: .72rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .career-timeline__scroller {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 20px 18px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(75,57,45,.35) transparent;
+      }
+
+      .career-timeline__scroller::-webkit-scrollbar { height: 8px; }
+      .career-timeline__scroller::-webkit-scrollbar-track { background: transparent; }
+      .career-timeline__scroller::-webkit-scrollbar-thumb {
+        background: rgba(75,57,45,.28);
+        border-radius: 999px;
+      }
+
+      .career-timeline__stage {
+        position: relative;
+        width: 2920px;
+        height: 760px;
+        margin: 0 auto;
+      }
+
+      .career-timeline__art {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .career-timeline__art .root-main {
+        fill: none;
+        stroke: var(--tl-root);
+        stroke-width: 18;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .career-timeline__art .root-highlight {
+        fill: none;
+        stroke: var(--tl-root-hi);
+        stroke-width: 5;
+        stroke-linecap: round;
+        opacity: .82;
+      }
+
+      .career-timeline__art .rootlet {
+        fill: none;
+        stroke: #6f5745;
+        stroke-width: 4;
+        stroke-linecap: round;
+        opacity: .7;
+      }
+
+      .career-timeline__art .rootlet.thin {
+        stroke-width: 2.2;
+        opacity: .48;
+      }
+
+      .career-timeline__events {
+        position: absolute;
+        inset: 0;
+      }
+
+      .career-event {
+        --x: 50%;
+        position: absolute;
+        left: var(--x);
+        top: 0;
+        width: 214px;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+
+      .career-event__card {
+        position: absolute;
+        left: 50%;
+        width: 214px;
+        transform: translateX(-50%);
+        padding: 1rem 1rem .95rem;
+        background: var(--tl-paper);
+        border: 1px solid var(--tl-border);
+        border-radius: 16px;
+        box-shadow: 0 10px 28px rgba(47,35,27,.07);
+        backdrop-filter: blur(3px);
+      }
+
+      .career-event--upper .career-event__card { top: 44px; }
+      .career-event--lower .career-event__card { top: 492px; }
+
+      .career-event:nth-child(3) .career-event__card { top: 76px; }
+      .career-event:nth-child(5) .career-event__card { top: 62px; }
+      .career-event:nth-child(7) .career-event__card { top: 82px; }
+      .career-event:nth-child(9) .career-event__card { top: 58px; }
+      .career-event:nth-child(11) .career-event__card { top: 78px; }
+      .career-event:nth-child(13) .career-event__card { top: 50px; }
+      .career-event:nth-child(4) .career-event__card { top: 510px; }
+      .career-event:nth-child(6) .career-event__card { top: 505px; }
+      .career-event:nth-child(8) .career-event__card { top: 515px; }
+      .career-event:nth-child(10) .career-event__card { top: 500px; }
+      .career-event:nth-child(12) .career-event__card { top: 512px; }
+
+      .career-event__year {
+        margin: 0 0 .42rem;
+        color: var(--tl-ochre);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+      }
+
+      .career-event__card h3 {
+        margin: 0 0 .5rem;
+        color: var(--tl-ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.08rem;
+        line-height: 1.17;
+      }
+
+      .career-event__card p:last-child {
+        margin: 0;
+        color: var(--tl-muted);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: .88rem;
+        line-height: 1.5;
+      }
+
+      .career-event__stem {
+        position: absolute;
+        left: 50%;
+        width: 1px;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, rgba(75,57,45,.12), rgba(75,57,45,.5));
+      }
+
+      .career-event--upper .career-event__stem {
+        top: 230px;
+        height: 167px;
+      }
+
+      .career-event--lower .career-event__stem {
+        top: 397px;
+        height: 95px;
+        background: linear-gradient(to bottom, rgba(75,57,45,.5), rgba(75,57,45,.12));
+      }
+
+      .career-event__node {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 397px;
+        width: 20px;
+        height: 20px;
+        transform: translate(-50%, -50%);
+        border: 4px solid var(--tl-ochre);
+        border-radius: 50%;
+        background: #f5efe5;
+        box-shadow: 0 3px 10px rgba(47,35,27,.16);
+      }
+
+      .career-event--present .career-event__card {
+        border-color: rgba(105,113,82,.28);
+        background: linear-gradient(145deg, rgba(248,244,236,.96), rgba(231,228,211,.94));
+      }
+
+      .career-event--present .career-event__year { color: var(--tl-moss); }
+      .career-event--present .career-event__node { border-color: var(--tl-moss); }
+
+      .career-timeline__caption {
+        width: min(900px, calc(100% - 40px));
+        margin: 1.4rem auto 0;
+        color: var(--tl-muted);
+        text-align: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: .98rem;
+        font-style: italic;
+      }
+
+      .biography-bottom-link {
+        display: block;
+        width: min(1180px, calc(100% - 40px));
+        margin: 2.5rem auto 4rem;
+      }
+
+      @media (max-width: 760px) {
+        .career-timeline { padding: 3.5rem 0; }
+        .career-timeline__hint { display: none; }
+        .career-timeline__scroller { overflow: visible; padding: 0 20px; }
+        .career-timeline__stage { width: auto; height: auto; margin: 0; }
+        .career-timeline__art { display: none; }
+        .career-timeline__events {
+          position: relative;
+          inset: auto;
+          margin-left: 8px;
+          padding-left: 26px;
+          border-left: 2px solid rgba(75,57,45,.24);
+        }
+        .career-event,
+        .career-event:nth-child(n) {
+          position: relative;
+          left: auto;
+          top: auto;
+          width: 100%;
+          height: auto;
+          margin: 0 0 1rem;
+          transform: none;
+        }
+        .career-event__card,
+        .career-event--upper .career-event__card,
+        .career-event--lower .career-event__card,
+        .career-event:nth-child(n) .career-event__card {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          transform: none;
+        }
+        .career-event__stem { display: none; }
+        .career-event__node {
+          left: -27px;
+          top: 25px;
+          width: 14px;
+          height: 14px;
+          border-width: 3px;
+        }
+      }
+    </style>
+  </head>
+  <body class="biography-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="Jesse Potter home">Jesse Potter</a>
+      <nav class="site-menu" id="site-menu" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a aria-current="page" href="biography.html">Biography</a>
+        <a href="community.html">Community</a>
+        <a href="social.html">Social</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="biography-story" id="main">
+      <figure class="community-opening-image biography-opening-image">
+        <img src="assets/jesse-potter-biography.jpg" alt="Jesse Potter playing acoustic guitar among tall trees" />
+        <div class="community-opening-title biography-opening-title">
+          <h1>Rooted in the<br />Annapolis<br />Valley.</h1>
+        </div>
+      </figure>
+      <article class="biography-story-copy story-width" aria-label="About Jesse Potter">
+        <div class="biography-copy">
+          <p>Centered in Wolfville, Nova Scotia, Jesse Potter has cultivated a musical career spanning nearly two decades. He began performing his original music at fourteen, shaped by the vitality and support of the Annapolis Valley music community.</p>
+          <p>Jesse went on to lead and contribute to projects including The Funtime Brigade, WineHardt: Django Uncorked, and his long-running folk-rock group The Chimney Swifts. In 2016, his song “Travel The World” carried the band into the regional Top 10 of CBC Searchlight.</p>
+          <p>Today, Jesse’s warm performances pair evocative lyrics with expressive guitar, blending blues and jazz with soulful folk storytelling. His songs invite audiences to connect, reflect, and leave with a renewed sense of wonder.</p>
+        </div>
+      </article>
+
+      <section class="career-timeline" aria-labelledby="musical-roots-title">
+        <div class="career-timeline__intro">
+          <p class="career-timeline__kicker">Biography Timeline</p>
+          <h2 id="musical-roots-title">Musical Roots</h2>
+          <p>A handful of the projects, recordings, performances, and turning points that shaped Jesse's path from teenage songwriter to the artist, producer, teacher, and community musician he is today.</p>
+          <div class="career-timeline__hint">Scroll sideways to explore →</div>
+        </div>
+
+        <div class="career-timeline__scroller">
+          <div class="career-timeline__stage">
+            <svg class="career-timeline__art" viewBox="0 0 2920 760" preserveAspectRatio="none" aria-hidden="true">
+              <path class="root-main" d="M25 397 C135 378 215 416 320 397 S505 377 610 397 S795 417 900 397 S1085 377 1190 397 S1375 417 1480 397 S1665 376 1770 397 S1955 417 2060 397 S2245 374 2350 397 S2540 412 2655 382 S2800 354 2890 338"/>
+              <path class="root-highlight" d="M25 397 C135 378 215 416 320 397 S505 377 610 397 S795 417 900 397 S1085 377 1190 397 S1375 417 1480 397 S1665 376 1770 397 S1955 417 2060 397 S2245 374 2350 397 S2540 412 2655 382 S2800 354 2890 338"/>
+
+              <path class="rootlet" d="M150 395 C128 470 104 535 78 650"/>
+              <path class="rootlet thin" d="M178 397 C205 475 214 550 235 670"/>
+              <path class="rootlet" d="M520 397 C488 480 465 555 435 680"/>
+              <path class="rootlet thin" d="M554 397 C590 475 604 555 628 675"/>
+              <path class="rootlet" d="M900 397 C868 478 846 560 820 682"/>
+              <path class="rootlet thin" d="M936 397 C972 474 990 555 1016 675"/>
+              <path class="rootlet" d="M1290 397 C1258 475 1232 550 1206 675"/>
+              <path class="rootlet thin" d="M1328 397 C1368 480 1384 555 1410 670"/>
+              <path class="rootlet" d="M1685 397 C1652 475 1628 545 1598 655"/>
+              <path class="rootlet thin" d="M1725 397 C1760 468 1788 540 1822 645"/>
+              <path class="rootlet" d="M2070 397 C2038 468 2015 525 1988 620"/>
+              <path class="rootlet thin" d="M2112 397 C2145 465 2170 530 2205 620"/>
+              <path class="rootlet" d="M2460 393 C2428 462 2404 520 2378 612"/>
+
+              <!-- a subtle branch at the present rather than a literal tree -->
+              <path d="M2785 360 C2780 318 2792 280 2810 245 C2826 216 2830 188 2827 157" fill="none" stroke="#4b392d" stroke-width="16" stroke-linecap="round"/>
+              <path d="M2806 246 C2778 218 2758 197 2733 179" fill="none" stroke="#4b392d" stroke-width="8" stroke-linecap="round"/>
+              <path d="M2819 218 C2847 195 2870 175 2894 149" fill="none" stroke="#4b392d" stroke-width="7" stroke-linecap="round"/>
+              <g fill="#697152" opacity=".95">
+                <ellipse cx="2728" cy="176" rx="17" ry="8" transform="rotate(-25 2728 176)"/>
+                <ellipse cx="2752" cy="188" rx="16" ry="8" transform="rotate(28 2752 188)"/>
+                <ellipse cx="2887" cy="147" rx="18" ry="9" transform="rotate(-30 2887 147)"/>
+                <ellipse cx="2866" cy="164" rx="16" ry="8" transform="rotate(25 2866 164)"/>
+                <ellipse cx="2820" cy="150" rx="15" ry="7" transform="rotate(-8 2820 150)"/>
+              </g>
+            </svg>
+
+            <div class="career-timeline__events">
+              <article class="career-event career-event--upper" style="--x:4%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2006</p><h3>First original songs</h3><p>Jesse begins documenting songs he has written himself, with Liam Potter accompanying on drums.</p></div>
+              </article>
+
+              <article class="career-event career-event--lower" style="--x:12%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2008</p><h3>Resisting Gravity</h3><p>A formative full-band chapter, including Night Kitchen and the group's first full-length set at On The Verge.</p></div>
+              </article>
+
+              <article class="career-event career-event--upper" style="--x:20%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2009</p><h3>Zenigma</h3><p>Another early project and another step toward a broader, more adventurous musical identity.</p></div>
+              </article>
+
+              <article class="career-event career-event--lower" style="--x:28%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2011</p><h3><em>Leavin Aint Easy</em></h3><p>Jesse releases his first solo album and establishes an early recorded catalogue of original songs.</p></div>
+              </article>
+
+              <article class="career-event career-event--upper" style="--x:36%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2011</p><h3>The Chimney Swifts begin</h3><p>A project that would grow through many forms and become one of the longest-running threads of Jesse's career.</p></div>
+              </article>
+
+              <article class="career-event career-event--lower" style="--x:44%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2012–2014</p><h3>The Funtime Brigade</h3><p>A playful “Hip-Rock Folk-Hop” era that expanded Jesse's writing into rap and produced the live album <em>Just A Whittle Bit</em>.</p></div>
+              </article>
+
+              <article class="career-event career-event--upper" style="--x:52%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2013</p><h3>Cross-Canada tour</h3><p>Touring with Micah O'Connell takes Jesse through Ontario, Alberta, and British Columbia.</p></div>
+              </article>
+
+              <article class="career-event career-event--lower" style="--x:60%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2013-2015</p><h3>WineHardt</h3><p>Gypsy-jazz ensemble work adds another musical language to an increasingly wide-ranging body of experience.</p></div>
+              </article>
+
+              <article class="career-event career-event--upper" style="--x:68%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2016</p><h3>CBC Searchlight Regional Top 10</h3><p>“Travel The World,” written by Jesse, carries The Chimney Swifts into the regional Top 10 of CBC Searchlight.</p></div>
+              </article>
+
+              <article class="career-event career-event--lower" style="--x:76%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2017 &amp; 2018</p><h3>Eastern Canada tours</h3><p>Two more tours across Eastern Canada expand Jesse's live experience and regional reach.</p></div>
+              </article>
+
+              <article class="career-event career-event--upper" style="--x:83%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2017–2018</p><h3>Dooly's Open Mic</h3><p>Hosting the New Minas open mic deepens Jesse's role as a facilitator and connector within the local scene.</p></div>
+              </article>
+
+              <article class="career-event career-event--lower" style="--x:90%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2019</p><h3><em>Astronomy</em></h3><p>The Chimney Swifts release an album recorded and produced by Jesse, alongside festival and theatre performances.</p></div>
+              </article>
+
+              <article class="career-event career-event--upper career-event--present" style="--x:97%;">
+                <span class="career-event__stem"></span><span class="career-event__node"></span>
+                <div class="career-event__card"><p class="career-event__year">2023 → Present</p><h3>A new solo chapter</h3><p>Songwriting, live performance, production, teaching, collaboration, and community work grow together into Jesse's present-day artistic practice.</p></div>
+              </article>
+            </div>            </div>
+          </div>
+        </div>
+
+        <p class="career-timeline__caption">Every project leaves something in the soil.</p>
+      </section>
+      <a class="back-link biography-bottom-link" href="index.html"><span aria-hidden="true">←</span> Back home</a>
+    </main>
+  </body>
+</html>
