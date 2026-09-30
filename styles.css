@@ -983,14 +983,11 @@ button {
   color: rgba(244, 239, 229, 0.72);
 }
 
-/* Stack Contact only when the viewport is genuinely narrow,
-   or when a desktop window is unusually short. Normal desktop
-   widths keep the original side-by-side composition. */
-@media (max-width: 980px) and (min-width: 761px),
-       (max-height: 480px) and (min-width: 761px) {
+/* Stack the contact layout before it becomes cramped on narrower laptops/tablets. */
+@media (max-width: 1280px) {
   .contact-page {
     min-height: 100svh;
-    padding: 58svh 0 0;
+    padding: 52svh 0 0;
     overflow: visible;
   }
 
@@ -1006,11 +1003,11 @@ button {
     position: absolute;
     inset: 0 0 auto 0;
     width: 100%;
-    height: 58svh;
+    height: 52svh;
   }
 
   .contact-page .page-background {
-    object-position: 34% 15%;
+    object-position: 34% center;
   }
 
   .contact-page .page-shade {
@@ -1103,18 +1100,16 @@ button {
 
   .contact-page {
     display: block;
-    padding: 58svh 0 0;
   }
 
-  .contact-page .page-background,
-  .contact-page .page-shade {
-    height: 58svh;
+  .contact-page {
+    padding-left: 0px;
   }
 
   .contact-page .page-background {
     right: 0px;
     width: 100%;
-    object-position: 34% 15%;
+    object-position: 34% center;
   }
 
   .contact-page .page-shade {
