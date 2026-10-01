@@ -198,11 +198,11 @@ button {
   width: min(25rem, calc(100% - (2 * var(--gutter))));
   padding: clamp(1.5rem, 3vw, 2.25rem);
   color: var(--ink);
-  background: rgba(255, 248, 241, 0.60);
+  background: rgba(255, 248, 241, 0.50);
   border: 1px solid rgba(244, 239, 229, 0.72);
   box-shadow: 0 1.25rem 3.5rem rgba(8, 14, 11, 0.34);
-  backdrop-filter: blur(10px) saturate(0.9);
-  -webkit-backdrop-filter: blur(10px) saturate(0.9);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   text-shadow: none;
   animation: mailing-prompt-in 0.35s ease both;
 }
