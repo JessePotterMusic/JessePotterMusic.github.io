@@ -1685,19 +1685,30 @@ button {
    MOBILE — MATCH COMMUNITY + CONTACT TO BIOGRAPHY HERO HEIGHT
    ========================================================= */
 
+/* =========================================================
+   MOBILE — MATCH COMMUNITY + CONTACT TO BIOGRAPHY HEIGHT
+   ========================================================= */
+
 @media (max-width: 760px) {
 
-  /* Community only — does not affect Biography */
+  /* Community */
+  .community-story > .community-opening-image {
+    height: 34rem;
+    overflow: hidden;
+  }
+
   .community-story > .community-opening-image img {
-    min-height: 34rem;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center center;
   }
 
   /* Contact */
   .contact-page .page-background {
+    width: 100% !important;
+    height: 34rem !important;
     min-height: 34rem !important;
-    height: auto !important;
     object-fit: cover !important;
     object-position: center center !important;
   }
