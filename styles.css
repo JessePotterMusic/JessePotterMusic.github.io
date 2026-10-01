@@ -1680,12 +1680,25 @@ button {
     object-position: 48% center;
   }
 }
+
 /* =========================================================
-   MOBILE — COMMUNITY CONTENT RHYTHM
+   MOBILE — MATCH COMMUNITY + CONTACT TO BIOGRAPHY HERO HEIGHT
    ========================================================= */
 
 @media (max-width: 760px) {
-  .community-overview {
-    padding-top: 3rem;
+
+  /* Community only — does not affect Biography */
+  .community-story > .community-opening-image img {
+    min-height: 34rem;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  /* Contact */
+  .contact-page .page-background {
+    min-height: 34rem !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 }
