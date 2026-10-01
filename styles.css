@@ -573,6 +573,7 @@ button {
 
 .biography-opening-title h1 {
   font-size: clamp(2.8rem, 5.7vw, 6rem);
+  top: 7rem;
 }
 
 .biography-story-copy {
@@ -1711,20 +1712,24 @@ button {
 }
 
 /* =========================================================
-   MOBILE — RESPONSIVE COMMUNITY HERO
+   MOBILE — CONSISTENT HERO TITLE + RESPONSIVE COMMUNITY CROP
    ========================================================= */
 
-/* Larger phones / narrow tablets */
 @media (max-width: 760px) {
+
+  /* Same vertical title anchor as Biography */
+  .community-story > .community-opening-image .community-opening-title,
+  .biography-opening-title {
+    top: 7rem;
+  }
 
   .community-story > .community-opening-image img {
     object-position: 44% center;
   }
 
   .community-story > .community-opening-image .community-opening-title {
-    top: 5.25rem;
-    right: 1.25rem;
-    width: 11.5rem;
+    right: 1rem;
+    width: 11rem;
     max-width: none;
   }
 
@@ -1743,9 +1748,8 @@ button {
   }
 
   .community-story > .community-opening-image .community-opening-title {
-    top: 4.75rem;
     right: 0.75rem;
-    width: 10.5rem;
+    width: 10rem;
   }
 
   .community-story > .community-opening-image .community-opening-title h1 {
@@ -1762,14 +1766,12 @@ button {
   }
 
   .community-story > .community-opening-image .community-opening-title {
-    top: 4.5rem;
     right: 0.5rem;
-    width: 9.5rem;
+    width: 9.25rem;
   }
 
   .community-story > .community-opening-image .community-opening-title h1 {
     font-size: 2.3rem;
-    line-height: 0.9;
   }
 }
 
