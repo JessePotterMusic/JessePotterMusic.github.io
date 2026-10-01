@@ -1,5 +1,6 @@
 const form = document.querySelector("#contact-form");
 const status = document.querySelector("#form-status");
+const formNote = document.querySelector(".form-note");
 const submitButton = form.querySelector('button[type="submit"]');
 
 form.addEventListener("submit", async (event) => {
@@ -11,7 +12,7 @@ form.addEventListener("submit", async (event) => {
   submitButton.innerHTML = "Sending…";
 
   status.hidden = true;
-  status.className = "form-status";
+  status.innerHTML = "";
 
   try {
     const response = await fetch(form.action, {
@@ -25,16 +26,29 @@ form.addEventListener("submit", async (event) => {
     if (response.ok) {
       form.reset();
 
-      form.hidden = true;
+      /* Hide the form directly */
+      form.style.setProperty("display", "none", "important");
+
+      /* Hide the little note underneath it too */
+      if (formNote) {
+        formNote.style.display = "none";
+      }
 
       status.innerHTML = `
         <div class="form-success">
           <span class="form-success-mark" aria-hidden="true">✓</span>
+
           <h2>Message sent.</h2>
+
           <p>
             Thanks for getting in touch. I'll get back to you as soon as I can.
           </p>
-          <button type="button" class="form-again" id="send-another">
+
+          <button
+            type="button"
+            class="form-again"
+            id="send-another"
+          >
             Send another message
           </button>
         </div>
@@ -42,14 +56,32 @@ form.addEventListener("submit", async (event) => {
 
       status.hidden = false;
 
+      /* Bring the confirmation into view */
+      requestAnimationFrame(() => {
+        status.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      });
+
       document
         .querySelector("#send-another")
         .addEventListener("click", () => {
           status.hidden = true;
-          form.hidden = false;
+          status.innerHTML = "";
+
+          /* Restore the form */
+          form.style.removeProperty("display");
+
+          if (formNote) {
+            formNote.style.removeProperty("display");
+          }
 
           const firstField = form.querySelector("input");
-          firstField.focus();
+
+          if (firstField) {
+            firstField.focus();
+          }
         });
 
     } else {
@@ -65,7 +97,7 @@ form.addEventListener("submit", async (event) => {
             .join(" ");
         }
       } catch {
-        // Use the default message.
+        // Keep the default error message.
       }
 
       status.innerHTML = `
@@ -76,16 +108,13 @@ form.addEventListener("submit", async (event) => {
       `;
 
       status.hidden = false;
-      status.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
-      });
     }
 
   } catch (error) {
     status.innerHTML = `
       <div class="form-error">
         <strong>Couldn't connect.</strong>
+
         <p>
           Please check your connection and try sending the message again.
         </p>
