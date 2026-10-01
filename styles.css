@@ -1390,3 +1390,100 @@ button {
     transform: none !important;
   }
 }
+/* =========================================================
+   CONTACT FORM — SUBMISSION STATES
+   ========================================================= */
+
+.form-status {
+  margin-top: 1.5rem;
+}
+
+.form-success {
+  max-width: 34rem;
+  padding: 2rem 0;
+  animation: form-success-in 0.5s ease both;
+}
+
+.form-success-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(244, 239, 229, 0.65);
+  border-radius: 50%;
+  font-family: var(--sans);
+  font-size: 1.2rem;
+  color: var(--cream);
+}
+
+.form-success h2 {
+  margin: 0 0 1rem;
+  font: 400 clamp(2.5rem, 4vw, 4rem)/0.95 var(--serif);
+  letter-spacing: -0.045em;
+}
+
+.form-success p {
+  max-width: 30rem;
+  margin: 0 0 1.75rem;
+  color: rgba(244, 239, 229, 0.75);
+  font: 400 clamp(1rem, 1.4vw, 1.15rem)/1.6 var(--serif);
+}
+
+.form-again {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(244, 239, 229, 0.65);
+  color: var(--cream);
+  background: transparent;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form-again:hover,
+.form-again:focus-visible {
+  color: var(--ink);
+  background: var(--cream);
+}
+
+.form-error {
+  max-width: 32rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(244, 239, 229, 0.45);
+}
+
+.form-error strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.form-error p {
+  margin: 0;
+  color: rgba(244, 239, 229, 0.75);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.contact-form button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+@keyframes form-success-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
