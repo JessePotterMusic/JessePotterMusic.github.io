@@ -1682,10 +1682,6 @@ button {
 }
 
 /* =========================================================
-   MOBILE — MATCH COMMUNITY + CONTACT TO BIOGRAPHY HERO HEIGHT
-   ========================================================= */
-
-/* =========================================================
    MOBILE — MATCH COMMUNITY + CONTACT TO BIOGRAPHY HEIGHT
    ========================================================= */
 
@@ -1713,13 +1709,69 @@ button {
     object-position: center center !important;
   }
 }
-/* =========================================================
-   MOBILE — COMMUNITY HERO FINE-TUNING
-   ========================================================= */
 
 /* =========================================================
-   MOBILE — COMMUNITY HERO FINE-TUNING
+   MOBILE — RESPONSIVE COMMUNITY HERO
    ========================================================= */
+
+/* Larger phones / narrow tablets */
+@media (max-width: 760px) {
+
+  .community-story > .community-opening-image img {
+    object-position: 44% center;
+  }
+
+  .community-story > .community-opening-image .community-opening-title {
+    top: 5.25rem;
+    right: 1.25rem;
+    width: 11.5rem;
+    max-width: none;
+  }
+
+  .community-story > .community-opening-image .community-opening-title h1 {
+    font-size: 3rem;
+    line-height: 0.9;
+  }
+}
+
+
+/* Typical phones */
+@media (max-width: 520px) {
+
+  .community-story > .community-opening-image img {
+    object-position: 40% center;
+  }
+
+  .community-story > .community-opening-image .community-opening-title {
+    top: 4.75rem;
+    right: 0.75rem;
+    width: 10.5rem;
+  }
+
+  .community-story > .community-opening-image .community-opening-title h1 {
+    font-size: 2.55rem;
+  }
+}
+
+
+/* Narrow phones */
+@media (max-width: 390px) {
+
+  .community-story > .community-opening-image img {
+    object-position: 38% center;
+  }
+
+  .community-story > .community-opening-image .community-opening-title {
+    top: 4.5rem;
+    right: 0.5rem;
+    width: 9.5rem;
+  }
+
+  .community-story > .community-opening-image .community-opening-title h1 {
+    font-size: 2.3rem;
+    line-height: 0.9;
+  }
+}
 
 /* =========================================================
    MOBILE — COMMUNITY HERO FINE-TUNING
