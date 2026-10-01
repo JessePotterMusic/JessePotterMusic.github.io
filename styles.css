@@ -201,8 +201,8 @@ button {
   background: rgba(255, 248, 241, 0.60);
   border: 1px solid rgba(244, 239, 229, 0.72);
   box-shadow: 0 1.25rem 3.5rem rgba(8, 14, 11, 0.34);
-  backdrop-filter: blur(18px) saturate(0.8);
-  -webkit-backdrop-filter: blur(18px) saturate(0.8);
+  backdrop-filter: blur(10px) saturate(0.9);
+  -webkit-backdrop-filter: blur(10px) saturate(0.9);
   text-shadow: none;
   animation: mailing-prompt-in 0.35s ease both;
 }
