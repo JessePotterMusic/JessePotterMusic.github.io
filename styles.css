@@ -1670,3 +1670,8 @@ button {
     color: rgba(244, 239, 229, 0.62);
   }
 }
+@media (max-width: 760px) {
+  .site-header {
+    background: transparent !important;
+  }
+}
