@@ -1713,3 +1713,25 @@ button {
     object-position: center center !important;
   }
 }
+/* =========================================================
+   MOBILE — COMMUNITY HERO FINE-TUNING
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .community-story > .community-opening-image img {
+    object-position: center 42%;
+  }
+
+  .community-opening-title {
+    right: 1rem;
+    top: 8.75rem;
+    max-width: 10.5rem;
+  }
+
+  .community-opening-title h1,
+  .community-opening-title {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+    line-height: 0.92;
+  }
+}
