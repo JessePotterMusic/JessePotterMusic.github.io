@@ -1721,23 +1721,25 @@ button {
    MOBILE — COMMUNITY HERO FINE-TUNING
    ========================================================= */
 
+/* =========================================================
+   MOBILE — COMMUNITY HERO FINE-TUNING
+   ========================================================= */
+
 @media (max-width: 760px) {
 
-  /* Shift photograph to the right inside the crop */
   .community-story > .community-opening-image img {
-    object-position: 42% center;
+    object-position: 34% center;
   }
 
-  /* Move title higher and farther right */
   .community-story > .community-opening-image .community-opening-title {
-    top: 6.5rem;
-    right: 1rem;
-    width: 11rem;
+    top: 5.25rem;
+    right: 0.6rem;
+    width: 9.5rem;
     max-width: none;
   }
 
   .community-story > .community-opening-image .community-opening-title h1 {
-    font-size: clamp(2.7rem, 11vw, 3.4rem);
-    line-height: 0.92;
+    font-size: clamp(2.35rem, 9.5vw, 3rem);
+    line-height: 0.9;
   }
 }
