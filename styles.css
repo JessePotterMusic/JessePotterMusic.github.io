@@ -1684,12 +1684,15 @@ button {
    MOBILE — MATCH COMMUNITY + CONTACT HERO IMAGES
    ========================================================= */
 
+/* =========================================================
+   MOBILE — MATCH COMMUNITY + CONTACT HERO IMAGES
+   ========================================================= */
+
 @media (max-width: 760px) {
 
-  /* Both hero areas use the same 3:2 frame */
   .community-opening-image {
     width: 100%;
-    aspect-ratio: 3 / 2;
+    height: 66.6667vw;
     overflow: hidden;
   }
 
@@ -1701,8 +1704,8 @@ button {
 
   .contact-page .page-background {
     width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 3 / 2;
+    height: 66.6667vw !important;
     object-fit: cover !important;
+    object-position: center center !important;
   }
 }
