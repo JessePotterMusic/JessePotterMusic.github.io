@@ -76,6 +76,10 @@ form.addEventListener("submit", async (event) => {
       `;
 
       status.hidden = false;
+      status.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+      });
     }
 
   } catch (error) {
