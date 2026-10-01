@@ -1680,3 +1680,12 @@ button {
     object-position: 48% center;
   }
 }
+/* =========================================================
+   MOBILE — COMMUNITY CONTENT RHYTHM
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .community-overview {
+    padding-top: 3rem;
+  }
+}
