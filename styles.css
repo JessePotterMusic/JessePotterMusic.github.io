@@ -571,11 +571,6 @@ button {
   background: rgb(17, 24, 20);
 }
 
-.biography-opening-title h1 {
-  font-size: clamp(2.8rem, 5.7vw, 6rem);
-  top: 7rem;
-}
-
 .biography-story-copy {
   padding-top: clamp(2.5rem, 5vw, 4.5rem);
   padding-bottom: clamp(3rem, 6vw, 6rem);
@@ -1208,10 +1203,6 @@ button {
     object-position: 46% center;
   }
 
-  .biography-opening-title h1 {
-    font-size: clamp(2rem, 8vw, 3.8rem);
-  }
-
   .community-overview-grid {
     grid-template-columns: 1fr;
   }
@@ -1734,7 +1725,6 @@ button {
   }
 
   .community-story > .community-opening-image .community-opening-title h1 {
-    font-size: 3rem;
     line-height: 0.9;
   }
 }
@@ -1752,9 +1742,6 @@ button {
     width: 10rem;
   }
 
-  .community-story > .community-opening-image .community-opening-title h1 {
-    font-size: 2.55rem;
-  }
 }
 
 
@@ -1770,7 +1757,20 @@ button {
     width: 9.25rem;
   }
 
-  .community-story > .community-opening-image .community-opening-title h1 {
-    font-size: 2.3rem;
+}
+
+@media (max-width: 760px) {
+
+  /* Biography + Community use the exact same title treatment */
+  .community-opening-title {
+    top: 7rem;
+    right: var(--gutter);
+    width: min(64vw, 25rem);
   }
+
+  .community-opening-title h1 {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+    line-height: 1.02;
+  }
+
 }
