@@ -21,17 +21,31 @@
 
   const dismissPrompt = () => {
     prompt.hidden = true;
+    dismissedAt = Date.now();
     try {
-      localStorage.setItem(storageKey, String(Date.now()));
+      localStorage.setItem(storageKey, String(dismissedAt));
     } catch {
       // Dismiss for this page view when browser storage is unavailable.
     }
   };
 
-  const timer = window.setTimeout(showPrompt, 3500);
+  let timer = window.setTimeout(showPrompt, 3500);
   closeButton.addEventListener("click", dismissPrompt);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !prompt.hidden) dismissPrompt();
   });
-  window.addEventListener("pagehide", () => window.clearTimeout(timer), { once: true });
+  window.addEventListener("pagehide", () => window.clearTimeout(timer));
+  window.addEventListener("pageshow", (event) => {
+    if (!event.persisted) return;
+    try {
+      dismissedAt = Number(localStorage.getItem(storageKey)) || dismissedAt;
+    } catch {
+      // Preserve this page's dismissal when storage is unavailable.
+    }
+    if (Date.now() - dismissedAt < twoWeeks) {
+      prompt.hidden = true;
+    } else if (prompt.hidden) {
+      timer = window.setTimeout(showPrompt, 3500);
+    }
+  });
 })();

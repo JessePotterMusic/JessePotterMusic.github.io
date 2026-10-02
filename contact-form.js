@@ -59,7 +59,7 @@ form.addEventListener("submit", async (event) => {
       /* Bring the confirmation into view */
       requestAnimationFrame(() => {
         status.scrollIntoView({
-          behavior: "smooth",
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
           block: "center"
         });
       });
@@ -103,10 +103,11 @@ form.addEventListener("submit", async (event) => {
       status.innerHTML = `
         <div class="form-error">
           <strong>Message not sent.</strong>
-          <p>${message}</p>
+          <p></p>
         </div>
       `;
 
+      status.querySelector(".form-error p").textContent = message;
       status.hidden = false;
     }
 

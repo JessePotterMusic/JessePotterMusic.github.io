@@ -1740,3 +1740,7 @@ button {
   }
 
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .form-success { animation: none; }
+}
