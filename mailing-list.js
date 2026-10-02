@@ -1,7 +1,7 @@
 (() => {
   const prompt = document.querySelector("#mailing-prompt");
   const closeButton = prompt?.querySelector(".mailing-prompt-close");
-  const storageKey = "jesse-potter-mailing-prompt-dismissed";
+  const storageKey = "jesse-potter-mailing-prompt-dismissed-v2";
   const twoWeeks = 14 * 24 * 60 * 60 * 1000;
 
   if (!prompt || !closeButton) return;
@@ -13,7 +13,11 @@
     // The invitation still works when browser storage is unavailable.
   }
 
-  if (Date.now() - dismissedAt < twoWeeks) return;
+  const recentlyDismissed = () => Number.isFinite(dismissedAt) &&
+    dismissedAt > 0 && dismissedAt <= Date.now() &&
+    Date.now() - dismissedAt < twoWeeks;
+
+  if (recentlyDismissed()) return;
 
   const showPrompt = () => {
     prompt.hidden = false;
@@ -42,7 +46,7 @@
     } catch {
       // Preserve this page's dismissal when storage is unavailable.
     }
-    if (Date.now() - dismissedAt < twoWeeks) {
+    if (recentlyDismissed()) {
       prompt.hidden = true;
     } else if (prompt.hidden) {
       timer = window.setTimeout(showPrompt, 3500);
