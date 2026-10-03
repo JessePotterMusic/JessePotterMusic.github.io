@@ -1745,3 +1745,15 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .form-success { animation: none; }
 }
+
+/* Keep the wordmark size and position consistent across all pages. */
+.site-header .wordmark {
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  transform: translateY(-0.4rem);
+}
+
+@media (max-width: 760px) {
+  .site-header .wordmark {
+    font-size: 1.2rem;
+  }
+}
