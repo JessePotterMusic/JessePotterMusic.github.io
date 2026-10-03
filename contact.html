@@ -39,6 +39,8 @@
         action="https://formspree.io/f/mljdvvla"
         method="post"
         >
+          <!-- Formspree ignores submissions when bots fill this hidden field. -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label>Name<input name="name" type="text" autocomplete="name" required /></label>
           <label>Email<input name="email" type="email" autocomplete="email" required /></label>
           <label>Subject<input name="subject" type="text" required /></label>
