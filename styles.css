@@ -125,6 +125,7 @@ button {
 }
 
 .home .page-background {
+  position: absolute;
   object-position: 56% center;
 }
 
@@ -133,6 +134,8 @@ button {
 }
 
 .home .page-shade {
+  position: absolute;
+  inset: 0;
   background: linear-gradient(90deg, rgba(8, 14, 11, 0.55), rgba(8, 14, 11, 0.04) 60%), linear-gradient(0deg, rgba(8, 14, 11, 0.52), transparent 48%);
 }
 
@@ -188,6 +191,230 @@ button {
 
 .home-title > a:hover span {
   transform: translateX(0.25rem);
+}
+
+/* Home show calendar */
+.shows-section {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2.75rem, 5vw, 4.5rem) var(--gutter) 0;
+  border-top: 0.42rem solid #9b6647;
+  color: #26312a;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 252, 242, 0.7), transparent 28rem),
+    linear-gradient(135deg, #e4d8c3, #c9b596);
+  box-shadow: inset 0 1px 0 rgba(255, 248, 235, 0.65);
+  text-shadow: none;
+}
+
+.shows-section::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.22;
+  background-image: repeating-linear-gradient(115deg, transparent 0 9px, rgba(72, 58, 39, 0.07) 10px);
+}
+
+.shows-inner {
+  position: relative;
+  width: min(100%, 76rem);
+  margin: 0 auto;
+}
+
+.shows-heading {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.shows-heading h2 {
+  margin: 0;
+  font: 400 clamp(2.75rem, 5vw, 5.25rem)/0.95 var(--serif);
+  letter-spacing: -0.05em;
+}
+
+.show-calendar {
+  border-top: 1px solid rgba(38, 49, 42, 0.34);
+  border-bottom: 1px solid rgba(38, 49, 42, 0.34);
+}
+
+.show-row {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  align-items: center;
+  padding: clamp(2rem, 4vw, 3.25rem) 0;
+}
+
+.show-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1rem;
+  border-left: 3px solid #9b6647;
+  font-variant-numeric: tabular-nums;
+}
+
+.show-weekday,
+.show-year,
+.show-artist {
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.show-artist {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+}
+
+.show-weekday {
+  margin-bottom: 0.3rem;
+  color: #70462f;
+}
+
+.show-date-main {
+  margin-bottom: 0.28rem;
+  font: 400 1.55rem/1 var(--serif);
+  letter-spacing: -0.035em;
+}
+
+.show-year {
+  color: rgba(38, 49, 42, 0.78);
+}
+
+.show-details p {
+  margin: 0;
+}
+
+.show-details .show-artist {
+  margin-bottom: 0.55rem;
+  color: #7e553c;
+}
+
+.show-details h3 {
+  margin: 0 0 0.45rem;
+  font: 400 clamp(2rem, 3.6vw, 3.5rem)/1 var(--serif);
+  letter-spacing: -0.04em;
+}
+
+.show-details > p:last-child {
+  color: rgba(38, 49, 42, 0.7);
+  font-size: 0.9rem;
+}
+
+.ticket-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11rem;
+  padding: 1rem 1.35rem;
+  border: 1px solid #26312a;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+a.ticket-button:hover,
+a.ticket-button:focus-visible {
+  color: #f4efe5;
+  background: #26312a;
+  transform: translateY(-2px);
+}
+
+.ticket-button-pending {
+  border-color: rgba(38, 49, 42, 0.38);
+  color: rgba(38, 49, 42, 0.62);
+}
+
+.shows-mailing-cta {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  column-gap: clamp(4rem, 12vw, 10rem);
+  width: 100vw;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  margin-left: calc(50% - 50vw);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem) max(var(--gutter), calc((100vw - 76rem) / 2 + 2.75rem));
+  border-top: 0.42rem solid #9b6647;
+  color: var(--cream);
+  background: #334238;
+  box-shadow: 0 1rem 2.5rem rgba(59, 44, 29, 0.14);
+}
+
+.shows-mailing-cta .kicker {
+  margin-bottom: 0.55rem;
+  color: rgba(244, 239, 229, 0.68);
+}
+
+.shows-mailing-cta h3 {
+  margin: 0;
+  font: 400 clamp(1.8rem, 3vw, 3rem)/1 var(--serif);
+  letter-spacing: -0.035em;
+}
+
+.shows-mailing-cta > a {
+  flex: 0 0 auto;
+  margin-top: 1.2rem;
+  padding: 1rem 1.4rem;
+  border: 1px solid #d7b17a;
+  border-radius: 999px;
+  color: #26312a;
+  background: #c99b62;
+  box-shadow: 0 0.55rem 1.4rem rgba(8, 14, 11, 0.24);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.shows-mailing-cta > a::after {
+  margin-left: 0.7rem;
+  content: "↗";
+  font-size: 0.95rem;
+  line-height: 0;
+  transition: transform 0.25s;
+}
+
+.shows-mailing-cta > a:hover,
+.shows-mailing-cta > a:focus-visible {
+  color: #1f2a23;
+  background: #ddb77f;
+  box-shadow: 0 0.8rem 2rem rgba(8, 14, 11, 0.34);
+  transform: translateY(-3px) scale(1.025);
+}
+
+.shows-mailing-cta > a:hover::after,
+.shows-mailing-cta > a:focus-visible::after {
+  transform: translate(0.18rem, -0.18rem);
+}
+
+.shows-mailing-cta > a:focus-visible {
+  outline: 2px solid #ddb77f;
+  outline-offset: 4px;
+}
+
+.home-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 1.35rem var(--gutter) 1.6rem;
+  text-align: center;
+}
+
+.home-footer p {
+  margin: 0;
+  color: rgba(38, 49, 42, 0.48);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 .mailing-prompt {
@@ -1024,6 +1251,51 @@ button {
 }
 
 @media (max-width: 760px) {
+  .shows-section {
+    padding-top: 2.75rem;
+    padding-bottom: 0;
+  }
+
+  .shows-heading {
+    margin-bottom: 2rem;
+  }
+
+  .shows-heading h2 {
+    font-size: clamp(2.7rem, 13vw, 4.2rem);
+  }
+
+  .show-row {
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .show-date {
+    padding-left: 0.75rem;
+  }
+
+  .show-date-main {
+    font-size: 1.3rem;
+  }
+
+  .ticket-button {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .shows-mailing-cta {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 2.25rem var(--gutter);
+  }
+
+  .shows-mailing-cta > a {
+    justify-content: center;
+    margin-top: 0;
+    text-align: center;
+  }
+
   .mailing-prompt {
     right: var(--gutter);
     bottom: var(--gutter);

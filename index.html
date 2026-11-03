@@ -36,20 +36,58 @@
         <a href="contact.html">Contact</a>
       </nav>
     </header>
-    <main class="home" id="main">
-      <img class="page-background" src="assets/jesse-potter-home.jpg" alt="Jesse Potter sitting on a rock in a woodland pond with his acoustic guitar" width="1200" height="800" />
-      <div class="page-shade"></div>
-      <div class="home-title">
-        <h1>Jesse Potter</h1>
-        <p>Singer · Songwriter · Guitarist</p>
-      </div>
-      <aside class="mailing-prompt" id="mailing-prompt" aria-labelledby="mailing-prompt-title" hidden>
-        <button class="mailing-prompt-close" type="button" aria-label="Close mailing list invitation">×</button>
-        <p class="kicker">Stay in the loop</p>
-        <h2 id="mailing-prompt-title">New music, shows &amp; stories.</h2>
-        <p>Join Jesse’s mailing list for occasional updates from the Annapolis Valley.</p>
-        <a href="https://jesse-potter-music-mob3fs.subscribepage.io" target="_blank" rel="noreferrer">Join the mailing list</a>
-      </aside>
+    <main id="main">
+      <section class="home" aria-label="Jesse Potter introduction">
+        <img class="page-background" src="assets/jesse-potter-home.jpg" alt="Jesse Potter sitting on a rock in a woodland pond with his acoustic guitar" width="1200" height="800" />
+        <div class="page-shade"></div>
+        <div class="home-title">
+          <h1>Jesse Potter</h1>
+          <p>Singer · Songwriter · Guitarist</p>
+        </div>
+        <aside class="mailing-prompt" id="mailing-prompt" aria-labelledby="mailing-prompt-title" hidden>
+          <button class="mailing-prompt-close" type="button" aria-label="Close mailing list invitation">×</button>
+          <p class="kicker">Stay in the loop</p>
+          <h2 id="mailing-prompt-title">New music, shows &amp; stories.</h2>
+          <p>Join Jesse’s mailing list for occasional updates from the Annapolis Valley.</p>
+          <a href="https://jesse-potter-music-mob3fs.subscribepage.io" target="_blank" rel="noreferrer">Join the mailing list</a>
+        </aside>
+      </section>
+
+      <section class="shows-section" id="shows" aria-labelledby="shows-title">
+        <div class="shows-inner">
+          <header class="shows-heading">
+            <h2 id="shows-title">Upcoming Shows</h2>
+          </header>
+
+          <div class="show-calendar" aria-label="Upcoming show calendar">
+            <article class="show-row">
+              <time class="show-date" datetime="2026-12-11">
+                <span class="show-weekday">Friday</span>
+                <span class="show-date-main">December 11</span>
+                <span class="show-year">2026</span>
+              </time>
+              <div class="show-details">
+                <p class="show-artist">Jesse Potter &amp; The Vivid River</p>
+                <h3>Live at The Annex</h3>
+                <p>Canning, Nova Scotia</p>
+              </div>
+              <span class="ticket-button ticket-button-pending" aria-label="Tickets coming soon">Tickets coming soon</span>
+            </article>
+          </div>
+
+          <aside class="shows-mailing-cta" aria-labelledby="shows-mailing-title">
+            <div>
+              <p class="kicker">Lend me your ear</p>
+              <h3 id="shows-mailing-title">Come along for the journey</h3>
+            </div>
+            <a href="https://jesse-potter-music-mob3fs.subscribepage.io" target="_blank" rel="noreferrer">Join the mailing list</a>
+          </aside>
+
+          <footer class="home-footer">
+            <p>&copy; 2026 Jesse Potter. All rights reserved.</p>
+          </footer>
+        </div>
+      </section>
     </main>
     <script src="mailing-list.js"></script>
     <script src="navigation.js"></script>
